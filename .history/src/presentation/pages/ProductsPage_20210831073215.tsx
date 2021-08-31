@@ -1,27 +1,22 @@
 import { Component } from "react"
-import { Container, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import { mock } from "../../core/mock";
 import Product from "../components/Product";
-import ProductForm from "../components/ProductForm";
 
 export default class ProductsPage extends Component {
-    // constructor(props: any) {
-    //     super(props);
-    // }
+    constructor(props: any) {
+        super(props);
+    }
 
     render() {
         return (
-            <Container>
-                <ProductForm/>
-                <br/>
+            <>
                 <Table>
                     <thead>
-                        <tr>
-                            <td>Name</td>
-                            <td>Latest Price</td>
-                            <td>Last Updated</td>
-                            <td>Actions</td>
-                        </tr>
+                        <tr>Name</tr>
+                        <tr>Latest Price</tr>
+                        <tr>Last Updated</tr>
+                        <tr>Actions</tr>
                     </thead>
                     <tbody>
                         {
@@ -29,7 +24,7 @@ export default class ProductsPage extends Component {
                         }
                     </tbody>
                 </Table>
-            </Container>
+            </>
         );
     }
 }

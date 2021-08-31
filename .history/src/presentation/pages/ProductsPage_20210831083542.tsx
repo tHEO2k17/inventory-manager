@@ -5,9 +5,9 @@ import Product from "../components/Product";
 import ProductForm from "../components/ProductForm";
 
 export default class ProductsPage extends Component {
-    // constructor(props: any) {
-    //     super(props);
-    // }
+    constructor(props: any) {
+        super(props);
+    }
 
     render() {
         return (
