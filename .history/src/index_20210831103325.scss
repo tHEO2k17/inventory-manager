@@ -1,0 +1,13 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+body{
+    background-color: #F2F2F2;
+}
+
+.table thead tr > th:last-child{
+    text-align: center;
+}
+
+.mtn-40{
+    margin-top: -40px;
+}

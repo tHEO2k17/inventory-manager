@@ -1,11 +1,15 @@
 import { Component } from "react"
-import { Button, Card, Col, Container, FormControl, InputGroup, Pagination, Row, Table } from "react-bootstrap";
+import { Button, Card, Col, Container, FormControl, InputGroup, Row, Table } from "react-bootstrap";
 import { mock } from "../../core/mock";
 import Banner from "../components/Banner";
 import Product from "../components/Product";
+import ProductForm from "../components/ProductForm";
 import TopBar from "../components/TopBar";
 
 export default class ProductsPage extends Component {
+    // constructor(props: any) {
+    //     super(props);
+    // }
 
     render() {
         return (
@@ -13,29 +17,32 @@ export default class ProductsPage extends Component {
                 <TopBar />
                 <Banner />
                 <Container>
-                    <Card className="mtn-40 border-0 shadow-sm">
-                        <Card.Body className="my-4">
+                    <Card className="mtn-30">
+                        <Card.Body>
                             <Row>
-                                <Col md="4" className="offset-8">
-                                    <InputGroup>
+                                <Col></Col>
+                                <Col>
+                                    <InputGroup className="mb-3">
                                         <FormControl
                                             placeholder="Searching for..."
                                             aria-label="Searching for..."
                                             aria-describedby="basic-addon2"
                                         />
-                                        <Button variant="outline-secondary" id="button-addon2"> Search</Button>
+                                        <Button variant="secondary" id="button-addon2"> Button</Button>
                                     </InputGroup>
                                 </Col>
                             </Row>
                         </Card.Body>
                     </Card>
-                    <Table striped className="mt-5">
+                    <ProductForm />
+                    <br />
+                    <Table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Latest Price</th>
-                                <th>Last Updated</th>
-                                <th>Actions</th>
+                                <td>Name</td>
+                                <td>Latest Price</td>
+                                <td>Last Updated</td>
+                                <td>Actions</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,13 +51,6 @@ export default class ProductsPage extends Component {
                             }
                         </tbody>
                     </Table>
-                    <Pagination className="mt-5 d-flex justify-content-center">
-                        <Pagination.First />
-                        <Pagination.Prev />
-                        <Pagination.Item active>{1}</Pagination.Item>
-                        <Pagination.Next />
-                        <Pagination.Last />
-                    </Pagination>
                 </Container>
             </>
         );

@@ -44,10 +44,10 @@ export default class ProductsPage extends Component {
                             }
                         </tbody>
                     </Table>
-                    <Pagination className="mt-5 d-flex justify-content-center">
+                    <Pagination>
                         <Pagination.First />
                         <Pagination.Prev />
-                        <Pagination.Item active>{1}</Pagination.Item>
+                        <Pagination.Item>{1}</Pagination.Item>
                         <Pagination.Next />
                         <Pagination.Last />
                     </Pagination>

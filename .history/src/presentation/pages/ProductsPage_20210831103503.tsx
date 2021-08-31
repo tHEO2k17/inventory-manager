@@ -1,12 +1,12 @@
 import { Component } from "react"
-import { Button, Card, Col, Container, FormControl, InputGroup, Pagination, Row, Table } from "react-bootstrap";
+import { Button, Card, Col, Container, FormControl, InputGroup, Row, Table } from "react-bootstrap";
 import { mock } from "../../core/mock";
 import Banner from "../components/Banner";
 import Product from "../components/Product";
 import TopBar from "../components/TopBar";
 
 export default class ProductsPage extends Component {
-
+   
     render() {
         return (
             <>
@@ -44,13 +44,6 @@ export default class ProductsPage extends Component {
                             }
                         </tbody>
                     </Table>
-                    <Pagination className="mt-5 d-flex justify-content-center">
-                        <Pagination.First />
-                        <Pagination.Prev />
-                        <Pagination.Item active>{1}</Pagination.Item>
-                        <Pagination.Next />
-                        <Pagination.Last />
-                    </Pagination>
                 </Container>
             </>
         );

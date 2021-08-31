@@ -1,5 +1,5 @@
 import { Component } from "react"
-import { Button, Card, Col, Container, FormControl, InputGroup, Pagination, Row, Table } from "react-bootstrap";
+import { Button, Card, Col, Container, FormControl, InputGroup, Row, Table } from "react-bootstrap";
 import { mock } from "../../core/mock";
 import Banner from "../components/Banner";
 import Product from "../components/Product";
@@ -38,19 +38,16 @@ export default class ProductsPage extends Component {
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {
-                                mock.products.map(product => <Product key={product.id} product={product} />)
-                            }
-                        </tbody>
+                        <Card>
+                            <Card.Body>
+                                <tbody>
+                                    {
+                                        mock.products.map(product => <Product key={product.id} product={product} />)
+                                    }
+                                </tbody>
+                            </Card.Body>
+                        </Card>
                     </Table>
-                    <Pagination className="mt-5 d-flex justify-content-center">
-                        <Pagination.First />
-                        <Pagination.Prev />
-                        <Pagination.Item active>{1}</Pagination.Item>
-                        <Pagination.Next />
-                        <Pagination.Last />
-                    </Pagination>
                 </Container>
             </>
         );

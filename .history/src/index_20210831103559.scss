@@ -1,0 +1,14 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+body{
+    background-color: #F2F2F2;
+}
+
+.table thead tr > th{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.mtn-40{
+    margin-top: -40px;
+}
