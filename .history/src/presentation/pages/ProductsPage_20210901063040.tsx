@@ -5,9 +5,8 @@ import Banner from "../components/Banner";
 import Product from "../components/Product";
 import TopBar from "../components/TopBar";
 import { IProduct } from "../../domain/dto/IProduct";
-import EmptyRow from "../components/EmptyRow";
 
-class ProductsPage extends Component<ReduxType> {
+class ProductsPage extends Component {
 
     render() {
 
@@ -45,9 +44,7 @@ class ProductsPage extends Component<ReduxType> {
                         </thead>
                         <tbody>
                             {
-                                products
-                                ? <EmptyRow/>
-                                : products.map((product: IProduct) => <Product key={product.id} product={product} />)
+                                products.map((product: IProduct) => <Product key={product.id} product={product} />)
                             }
                         </tbody>
                     </Table>
@@ -68,6 +65,5 @@ const mapStateToProps = (state: any) => {
     const { products } = state.productsData;
     return { products };
 }
-type ReduxType = ReturnType<typeof mapStateToProps>;
 
 export default connect(mapStateToProps)(ProductsPage);
