@@ -33,7 +33,7 @@ const Product = ({ product }: ProductProps) => {
             <td width="15%">
                 <Button size="sm" variant="outline-secondary">View</Button>
                 <Button size="sm" variant="outline-secondary" className="mx-2">Edit</Button>
-                <Button onClick={() => handleDelete(product.id)} size="sm" variant="outline-danger">Delete</Button>
+                <Button size="sm" variant="outline-danger">Delete</Button>
             </td>
         </tr>
     );

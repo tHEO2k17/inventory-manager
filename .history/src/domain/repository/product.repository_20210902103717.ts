@@ -14,7 +14,7 @@ export default class ProductRepository {
         product = {
             ...product,
             id: this.generateId(storage.products),
-            prices: this.setPrices(product.prices)
+            prices: this.addPrices(product.prices)
         }
 
         storage.products ? storage.products.push(product) : storage.products = [product];
@@ -26,28 +26,18 @@ export default class ProductRepository {
     }
 
     public static deleteProduct(id: number) {
-
-        console.log(id);
-
-        let storage: IResponse = this.fetchProducts();
-        var item = storage.products.findIndex(d => d.id === id);
-        console.log(item);
-
-        if(item !== -1){
-            storage.products.splice(item, 1);
-            localStorage.setItem('PRODUCTS', JSON.stringify(storage));
-        }
+        return;
     }
 
-    private static setPrices(prices: IPrice[]) {
+    private static addPrices(prices: IPrice[]) {
         return prices.map(price => {
-            price.id = this.generateId(prices) || 0;
+            price.id = this.generateId(prices);
             return price;
         })
     }
 
     private static generateId(data: any[]): number {
-        let item = data ? data[data.length - 1] : [];
-        return item.id != null ? item.id + 1 : 0;
+        let item = data[data.length - 1];
+        return item != null ? item.id + 1 : 0;
     }
 }

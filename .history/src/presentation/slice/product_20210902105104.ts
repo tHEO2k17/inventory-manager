@@ -13,7 +13,7 @@ const productSlice = createSlice({
             ProductRepository.editProduct(action.payload.id, action.payload);
         },
         deleteProduct: (state, action) => {
-            ProductRepository.deleteProduct(action.payload);
+            ProductRepository.deleteProduct(action.payload.id);
         }
     }
 })

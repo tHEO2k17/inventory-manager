@@ -1,5 +1,5 @@
 import { Table } from "react-bootstrap";
-import { useAppSelector } from "../../core/hook";
+import { useAppDispatch, useAppSelector } from "../../core/hook";
 import { IProduct } from "../../domain/dto/IProduct";
 import EmptyRow from "./EmptyRow";
 import Product from "./Product";

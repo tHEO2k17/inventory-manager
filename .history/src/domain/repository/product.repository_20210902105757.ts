@@ -26,9 +26,6 @@ export default class ProductRepository {
     }
 
     public static deleteProduct(id: number) {
-
-        console.log(id);
-
         let storage: IResponse = this.fetchProducts();
         var item = storage.products.findIndex(d => d.id === id);
         console.log(item);

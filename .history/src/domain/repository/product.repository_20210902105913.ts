@@ -26,9 +26,6 @@ export default class ProductRepository {
     }
 
     public static deleteProduct(id: number) {
-
-        console.log(id);
-
         let storage: IResponse = this.fetchProducts();
         var item = storage.products.findIndex(d => d.id === id);
         console.log(item);
@@ -48,6 +45,6 @@ export default class ProductRepository {
 
     private static generateId(data: any[]): number {
         let item = data ? data[data.length - 1] : [];
-        return item.id != null ? item.id + 1 : 0;
+        return item.id + 1 || 0;
     }
 }

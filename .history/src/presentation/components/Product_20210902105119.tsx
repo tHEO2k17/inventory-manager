@@ -19,7 +19,7 @@ const Product = ({ product }: ProductProps) => {
     }
 
     const handleDelete = (id: number) => {
-        let confirmed = window.confirm("Are you sure you want to perform this action?");
+        let confirmed = confirm("Are you sure you want to perform this action?");
         if (confirmed) {
             dispatch(deleteProduct(id))
         }
@@ -33,7 +33,7 @@ const Product = ({ product }: ProductProps) => {
             <td width="15%">
                 <Button size="sm" variant="outline-secondary">View</Button>
                 <Button size="sm" variant="outline-secondary" className="mx-2">Edit</Button>
-                <Button onClick={() => handleDelete(product.id)} size="sm" variant="outline-danger">Delete</Button>
+                <Button size="sm" variant="outline-danger">Delete</Button>
             </td>
         </tr>
     );
