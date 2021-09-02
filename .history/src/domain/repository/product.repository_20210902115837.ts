@@ -15,31 +15,22 @@ export default class ProductRepository {
             ...product,
             id: this.generateId(storage.products),
             prices: this.setPrices(product.prices)
-        };
+        }
 
         storage.products ? storage.products.push(product) : storage.products = [product];
         localStorage.setItem('PRODUCTS', JSON.stringify(storage));
     }
 
     public static editProduct(product: IProduct) {
-        let storage: IResponse = this.fetchProducts();
-        let index = storage.products.findIndex(e => e.id === product.id);
-        let updatedProduct = storage.products[index];
-        updatedProduct.prices.push(...product.prices)
-        updatedProduct = {
-            ...updatedProduct,
-            prices: this.setPrices(updatedProduct.prices)
-        };
-
-        storage.products ? storage.products.push(updatedProduct) : storage.products = [updatedProduct];
-        localStorage.setItem('PRODUCTS', JSON.stringify(storage));
+        return;
     }
 
     public static deleteProduct(id: number) {
         let storage: IResponse = this.fetchProducts();
         var item = storage.products.findIndex(d => d.id === id);
+        console.log(item);
 
-        if (item !== -1) {
+        if(item !== -1){
             storage.products.splice(item, 1);
             localStorage.setItem('PRODUCTS', JSON.stringify(storage));
         }
@@ -47,10 +38,8 @@ export default class ProductRepository {
 
     private static setPrices(prices: IPrice[]) {
         return prices.map(price => {
-            if (!price.id) {
-                price.id = this.generateId(prices);
-                price.date = new Date();
-            }
+            price.id = this.generateId(prices) || 0;
+            price.date = new Date();
             return price;
         })
     }

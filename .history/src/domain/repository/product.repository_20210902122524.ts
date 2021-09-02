@@ -25,14 +25,17 @@ export default class ProductRepository {
         let storage: IResponse = this.fetchProducts();
         let index = storage.products.findIndex(e => e.id === product.id);
         let updatedProduct = storage.products[index];
-        updatedProduct.prices.push(...product.prices)
+        
         updatedProduct = {
             ...updatedProduct,
-            prices: this.setPrices(updatedProduct.prices)
+            prices: [...updatedProduct.prices, this.setPrices(product.prices)[0]]
         };
 
         storage.products ? storage.products.push(updatedProduct) : storage.products = [updatedProduct];
         localStorage.setItem('PRODUCTS', JSON.stringify(storage));
+
+
+        return;
     }
 
     public static deleteProduct(id: number) {

@@ -1,9 +1,9 @@
 import { Button } from "react-bootstrap"
 import moment from 'moment';
-import { IProduct } from "../../domain/dto/IProduct";
-import { IPrice } from "../../domain/dto/IPrice";
-import { useAppDispatch } from "../../core/hook";
-import { deleteProduct } from "../slice/product";
+import { useAppDispatch } from "../../../core/hook";
+import { IPrice } from "../../../domain/dto/IPrice";
+import { IProduct } from "../../../domain/dto/IProduct";
+import { deleteProduct } from "../../slice/product";
 
 const Product = ({ product }: ProductProps) => {
 
@@ -29,11 +29,10 @@ const Product = ({ product }: ProductProps) => {
         <tr>
             <td width="50%">{product.name}</td>
             <td>GHS {findLatestPriceInfo(product.prices!).price}</td>
-            <td>GHS {findLatestPriceInfo(product.prices!).date}</td>
+            <td>{findLatestPriceInfo(product.prices!).date}</td>
             <td width="15%">
-                <Button size="sm" variant="outline-secondary">View</Button>
-                <Button size="sm" variant="outline-secondary" className="mx-2">Edit</Button>
-                <Button onClick={() => handleDelete(product.id)} size="sm" variant="outline-danger">Delete</Button>
+                <Button size="sm" variant="link" className="mx-2">Edit</Button>
+                <Button onClick={() => handleDelete(product.id)} size="sm" variant="link" className="text-danger">Delete</Button>
             </td>
         </tr>
     );

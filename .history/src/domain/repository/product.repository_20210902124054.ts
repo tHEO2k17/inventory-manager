@@ -33,6 +33,9 @@ export default class ProductRepository {
 
         storage.products ? storage.products.push(updatedProduct) : storage.products = [updatedProduct];
         localStorage.setItem('PRODUCTS', JSON.stringify(storage));
+
+
+        return;
     }
 
     public static deleteProduct(id: number) {
