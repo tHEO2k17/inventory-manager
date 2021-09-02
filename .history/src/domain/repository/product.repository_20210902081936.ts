@@ -1,0 +1,23 @@
+import { typedMock } from "../../core/mock";
+import { IProduct } from "../dto/IProduct";
+import { IResponse } from "../dto/IResponse";
+
+export default class ProductRepository {
+
+    public static fetchProducts(): IResponse {
+        // let products = localStorage.getItem('PRODUCTS') || '{}';
+        return typedMock; //JSON.parse(products);
+    }
+
+    public static addProduct(product: IProduct) {
+        return;
+    }
+
+    public static editProduct(id: number, product: IProduct) {
+        return;
+    }
+
+    public static deleteProduct(id: number) {
+        return;
+    }
+}
